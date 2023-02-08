@@ -35,11 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      -name: Run sonarqube
-      run: sonar-scanner
-            -Dsonar.organization=alemisalar 
-            -Dsonar.projectKey=june-project 
-            -Dsonar.source=$GITHUB_WORKSPACE
-            -Dsonar.sources=. 
-            -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.login="194791759322296ff37fe975bc22bd3ba239d9f6"
+      - name: SonarQube Scan
+        uses: kitabisa/sonarqube-action@v1.2.0
+        with:
+          host: ${{ secrets.SONARQUBE_HOST }}
+          login: 194791759322296ff37fe975bc22bd3ba239d9f6
