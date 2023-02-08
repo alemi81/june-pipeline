@@ -39,6 +39,7 @@ jobs:
       run: sonar-scanner
             -Dsonar.organization=alemisalar 
             -Dsonar.projectKey=june-project 
+            -Dsonar.source=$GITHUB_WORKSPACE
             -Dsonar.sources=. 
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.login="194791759322296ff37fe975bc22bd3ba239d9f6"
